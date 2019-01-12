@@ -19,6 +19,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<style>
+		#preloader{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background: black;
+			top: 0;
+			display: flex;
+			z-index: 90000000;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
 	<?php wp_head(); ?>
 </head>
 

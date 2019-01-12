@@ -18,7 +18,11 @@ $post = get_post();
 <article <?php post_class('post-section'); ?> id="post-<?php the_ID(); ?>">
 
 	<div class="container text-center">
-		<div class="row"></div>
+		<div class="row">
+		<div class="mx-auto my-4">
+			<?php wp_link_pages(); ?>
+		</div>
+		</div>
 		<div class="row">
 			
 			<div class="text-justify post-box pt-4">
@@ -28,6 +32,10 @@ $post = get_post();
 					<?php the_content(); ?>
 				
 				</div><!-- .entry-content -->
+				<div class="text-center my-4">
+					<?php wp_link_pages(); ?>
+				</div>
+
 			</div>
 			<!-- signature -->
 			<em class="mx-auto">With love,</em>

@@ -43,7 +43,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- wrapper end -->
 
 </div><!-- #page we need this extra closing tag here -->
-
+<div id="preloader"><img src="/wp-content/themes/understrap/img/loading.gif" /></div>
 <?php wp_footer(); ?>
 <script defer  src="http://ea.local/wp-content/themes/understrap/js/custom.js"></script>
 
