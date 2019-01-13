@@ -148,3 +148,14 @@ input{
     border: 0;
     cursor: pointer;
 }
+
+.um .um-field-label,
+.um-field-checkbox-option, 
+.um-field-radio-option{
+    color: $light !important;
+    // font-family: Lato;
+}
+
+.um input[type=submit].um-button{
+    background-color: $primary !important;
+}
