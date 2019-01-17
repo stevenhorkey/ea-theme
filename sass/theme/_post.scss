@@ -20,7 +20,8 @@ blockquote:hover{
 
 #notes-div{
   position: fixed;
-  height: 10rem;
+  min-height: 200px;
+  height: fit-content;
   background: white;
   width: 300px;
   z-index: 1;
