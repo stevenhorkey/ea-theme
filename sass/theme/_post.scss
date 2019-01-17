@@ -18,6 +18,18 @@ blockquote:hover{
   transform: scale(1.02);
 }
 
+#notes-div{
+  position: fixed;
+  height: 10rem;
+  background: white;
+  width: 300px;
+  z-index: 1;
+  border: 1px solid gray;
+  bottom: 33px;
+  right: 33px;
+  padding: 1rem;
+}
+
 .post-subscribe{
   background: $gray-200;
 }

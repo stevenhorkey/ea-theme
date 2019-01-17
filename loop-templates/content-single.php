@@ -28,6 +28,7 @@ $post = get_post();
 			<div class="text-justify post-box pt-4">
 				<div id="tempDiv" class="d-none"></div>
 				<div class="entry-content written-copy">
+				<!-- <div contenteditable="" id="notes-div"></div> -->
 				
 					<?php the_content(); ?>
 				

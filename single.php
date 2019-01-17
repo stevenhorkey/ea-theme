@@ -12,7 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 get_hero();
 $container = get_theme_mod( 'understrap_container_type' );
-
+// echo var_dump($post);
+$currPost = $post;
+// global $current_user;  
+// var_dump($current_user);
 ?>
 
 <div class="container">
@@ -66,6 +69,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					?>
 
 				<?php endwhile; // end of the loop. ?>
+				
 
 			</main><!-- #main -->
 
@@ -79,7 +83,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <script defer src="/wp-content/themes/understrap/js/pdfmake/pdfmake.min.js"></script>
 <script defer src="/wp-content/themes/understrap/js/pdfmake/vfs_fonts.js"></script>
 <script defer>
-	var post = <?php echo json_encode($post); ?>
+	var post = <?php echo json_encode($currPost); ?>
 </script>
 
 <?php 

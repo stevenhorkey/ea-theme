@@ -1,9 +1,11 @@
 // custom js
 var $ = jQuery;
 
+var id = post.ID;
+var title = post.post_title;
 
 function createPDF(){
-  var title = post.post_title;
+  
   const exerciseDescription = post.post_excerpt;
   var questions = []
   var answers = []
@@ -156,8 +158,56 @@ function renderWorksheetForm(){
     });
 }
 
+function postJSON() {
+  // if logged in
+  console.log('post json')
+  $("input,select,.post-form-ta").each(function() {
+    if($(this).is("[type='checkbox']") || $(this).is("[type='checkbox']")) {
+      $(this).attr("checked", $(this).attr("checked"));
+    }
+    else {
+       $(this).attr("value", $(this).val()); 
+    }
+  });
+  let obj = {postId: id, title: title, date: new Date(), content: $('.written-copy').html()};
+  $.post('/wp-json/wp/v2/addPostFormHTMLInstance', JSON.stringify(obj), function(res){
+    console.log(JSON.parse(res));
+  })
+    .done(function() {
+      alert( "second success" );
+    })
+    .fail(function() {
+      alert( "error" );
+    })
+    .always(function() {
+      // alert( "finished" );
+    });
+};
+
+function getMorePostFormInstances(){
+  $.get('/wp-json/wp/v2/getPostFormHTMLInstances', {
+    postId: null,
+    userId: null
+  }, function(res){
+    console.log(JSON.parse(res));
+  })
+    .done(function() {
+      alert( "second success" );
+    })
+    .fail(function(err) {
+      alert( "error" );
+    })
+    .always(function() {
+      // alert( "finished" );
+    });
+}
+
 
 $( document ).ready(function() {
+
+  // $.get('/wp-json/wp/v2/addPostFormHTMLInstance', function(res){
+  //   console.log(res);
+  // });
 
     renderWorksheetForm();
 
@@ -187,8 +237,9 @@ $( document ).ready(function() {
     document.body.appendChild(icons);
 
     $("#create-pdf").click(function(){
-      console.log(post);
+      // console.log(post);
       createPDF();
+      // postJSON();
     })
 
 
