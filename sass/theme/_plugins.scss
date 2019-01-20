@@ -12,6 +12,7 @@
         box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
     }
     .playlist{
+        
         display: flex !important;
         /* align-items: center; */
         justify-content: center;
@@ -19,6 +20,9 @@
         padding: 1rem;
         border-radius: 3px;
         flex-direction: column;
+        .sr_it-playlist-title{
+            text-transform: uppercase;
+        }
     }
     li{
         list-style: none;
@@ -32,7 +36,7 @@
         flex-direction: row-reverse;
         background: white;
         padding: 1rem;
-        box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
+        box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24) !important;
     }
 }
 
