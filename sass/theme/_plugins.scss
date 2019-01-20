@@ -8,8 +8,11 @@
     background: #eee;
     padding: 3rem 0;
     box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
+    img{
+        box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
+    }
     .playlist{
-        display: flex;
+        display: flex !important;
         /* align-items: center; */
         justify-content: center;
         /* background: #eee; */
@@ -34,6 +37,7 @@
 }
 
 .album-store .buttons-block{
+    background: white;
     margin: 30px auto 30px;
     box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24)
 }
