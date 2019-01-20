@@ -1,0 +1,39 @@
+.iron-audioplayer{
+    display: flex;
+    opacity: 1;
+    justify-content: center;
+    align-items: stretch;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    background: #eee;
+    padding: 3rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
+    .playlist{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        /* background: #eee; */
+        padding: 1rem;
+        border-radius: 3px;
+        flex-direction: column;
+    }
+    li{
+        list-style: none;
+        position: relative;
+        clear: both;
+        margin: 10px 0;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
+    }
+}
+
+.album-store .buttons-block{
+    margin: 30px auto 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24)
+}

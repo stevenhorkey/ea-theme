@@ -60,7 +60,7 @@ function addPostFormHTMLInstance(){
 		
 	// $id = $wp_get_current_user_id();
 	$post = json_decode($_POST);
-	return json_encode($post);
+	// return json_encode($post);
 
 	$wpdb->insert( 
 		'wp_user_post_form_instances', 
