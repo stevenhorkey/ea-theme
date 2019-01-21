@@ -23,21 +23,24 @@
         .sr_it-playlist-title{
             text-transform: uppercase;
         }
+
+        li{
+            list-style: none;
+            position: relative;
+            clear: both;
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+            background: white;
+            text-align: left;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24) !important;
+        }
     }
-    li{
-        list-style: none;
-        position: relative;
-        clear: both;
-        margin: 10px 0;
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-        background: white;
-        padding: 1rem;
-        box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24) !important;
-    }
+    
 }
 
 .album-store .buttons-block{
