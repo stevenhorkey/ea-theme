@@ -27,7 +27,9 @@ if(!$src) $src = "https://source.unsplash.com/collection/1242150/2000x1200";
             padding: 5rem;
         ">
     <div class="container h-100">
-        <div class="row h-100 d-flex align-items-center justify-content-center flex-column text-uppercase">
+        <div class="row h-100 d-flex align-items-center justify-content-center flex-column text-uppercase" style="
+            margin: 30vh 0;
+        ">
             <h1 class="text-light"><?php the_title(); ?></h1>
             <h3 class="text-light"><?php the_subtitle(); ?></h3>
         </div>
