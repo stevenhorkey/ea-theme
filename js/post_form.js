@@ -162,6 +162,7 @@ function renderWorksheetForm(){
 }
 
 function getMorePostFormInstances(){
+  console.log('get more form instances');
   $.get('/wp-json/wp/v2/getPostFormHTMLInstances', {
     postId: id,
     userId: userId
