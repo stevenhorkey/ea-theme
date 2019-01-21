@@ -8,7 +8,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-echo var_dump(the_post());
+
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -19,6 +19,7 @@ echo var_dump(the_post());
 		<?php the_content(); ?>
 
 		<?php
+		echo var_dump(the_post());
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
