@@ -28,6 +28,13 @@ get_hero();
 						the_content();
 					}
 				} ?>
+				<!-- <div class="col-12 d-flex align-items-center justify-content-center py-4">
+					<img id="steven-headshot" src="https://everythinginall.com/wp-content/uploads/2019/01/steven-headshot.jpg" />
+					<div class="flex-column d-flex align-items-center">
+						<img id="home-signiture" src={signiture}/>
+						<small class="text-muted">Steven Horkey</small>
+					</div>
+				</div> -->
 			</div>
 			<div class="col-lg-6 pt-5">
 				<?php get_subscribe() ?>
