@@ -6,10 +6,13 @@
     flex-flow: row wrap;
     box-sizing: border-box;
     background: #eeeeeedb;
-    padding: 3rem 0;
+    padding: 4rem 0;
     box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
     img{
         box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
+    }
+    .player .totalTime{
+        display: none;
     }
     .playlist{
         
@@ -48,5 +51,17 @@
 .album-store .buttons-block{
     background: white;
     margin: 30px auto 30px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24)
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
+    .available-now{
+        padding: 5px;
+    }
+    .store-list{
+        padding: 0;
+    }
+}
+
+@media (max-width: 991px){
+    .iron-audioplayer .playlist{
+        padding-left: unset;
+    }
 }

@@ -24,7 +24,7 @@ if(!$src) $src = "https://source.unsplash.com/collection/1242150/2000x1200";
             background: linear-gradient(#00000080, #00000080), url('<?php echo $src ?>');
             min-height: 100vh;
             height: fit-content;
-            padding: 5rem;
+            padding: 5rem 0;
         ">
     <div class="container h-100">
         <div class="row h-100 d-flex align-items-center justify-content-center flex-column text-uppercase" style="
