@@ -16,6 +16,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 $currPost = $post;
 // global $current_user;  
 // var_dump($current_user);
+error_log('test');
 ?>
 
 <div class="container">
@@ -37,6 +38,9 @@ $currPost = $post;
 			<!-- toolbar -->
 			<div class="post-btns bg-light">
 				<ion-icon id="create-pdf"  name="document"></ion-icon>
+				<ion-icon id="saveNewForm"  name="save"></ion-icon>
+				<ion-icon id="getSavedForms"  name="folder"></ion-icon>
+				<div><ul id="savedForms"></ul></div>
 				<!-- <img onclick="downloadJSON()" src={downloadSVG} />
 				<img data-toggle="modal" data-target="#uploadJSONmodal" src={uploadSVG} /> -->
 				<!-- <div><ion-icon data-toggle="modal" data-target="#uploadJSONmodal" name="document"></ion-icon></div> -->
@@ -83,7 +87,8 @@ $currPost = $post;
 <script defer src="/wp-content/themes/understrap/js/pdfmake/pdfmake.min.js"></script>
 <script defer src="/wp-content/themes/understrap/js/pdfmake/vfs_fonts.js"></script>
 <script defer>
-	var post = <?php echo json_encode($currPost); ?>
+	var post = <?php echo json_encode($currPost); ?>;
+	var userId = <?php echo get_current_user_id(); ?>;
 </script>
 
 <?php 

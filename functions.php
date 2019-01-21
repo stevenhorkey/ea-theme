@@ -53,49 +53,33 @@ function is_last_page() {
 }
 
 // Activate WordPress Maintenance Mode
-// function wp_maintenance_mode(){
-//     if(!current_user_can('edit_themes') && !is_user_logged_in()){
-//         wp_die('<h1 style="color:#88a4ac">Website Under Maintenance</h1><br />We are performing scheduled maintenance. We will be back on-line shortly!');
-//     }
-// }
-// add_action('get_header', 'wp_maintenance_mode');
+function wp_maintenance_mode(){
+    if(!current_user_can('edit_themes') && !is_user_logged_in()){
+        wp_die('<h1 style="color:#88a4ac">Website Under Maintenance</h1><br />We are performing scheduled maintenance. We will be back on-line shortly!');
+    }
+}
+add_action('get_header', 'wp_maintenance_mode');
 
 function addPostFormHTMLInstance(){
-	// Insert post form instance into db.
 	
 	global $wpdb;
-	// global $current_user; 
-		
-	// $id = $wp_get_current_user_id();
-	$post = json_decode($_POST);
-	// return json_encode($post);
+	
+	$sql = $wpdb->prepare("INSERT INTO `wp_user_post_form_instances` (`post_id`,`user_id`,`html_content`) values (%d,%d,%s)", $_POST['postId'], $_POST['userId'], $_POST['content']);
 
-	$wpdb->insert( 
-		'wp_user_post_form_instances', 
-		array( 
-			'post_id' => $post->postId, 
-			'user_id' => 1,
-			'html_content' => $post->content
-		), 
-		array( 
-			'%d',
-			'%d',
-			'%s' 
-		) 
-	);
+	$result = $wpdb->query($sql);
 
-	return json_encode($result);
+	return $result;
 }
 
 function getPostFormHTMLInstances(){
 	// return json array of post instances for user for that specific post they are at. 
 	global $wpdb;
-	$id = get_current_user_id();
-	return json_encode($id);
 
 	$get = json_decode($_GET);
+	$userId = $_GET['userId'];
+	$postId = $_GET['postId'];
 
-	$query = "SELECT * FROM `wp_user_post_form_instances` WHERE `user_id` = $get->userId ORDER BY `date_created` DESC";
+	$query = "SELECT * FROM `wp_user_post_form_instances` WHERE (`user_id` = $userId) AND (`post_id` = $postId) ORDER BY `date_created` DESC";
 
     $items = $wpdb->get_results($query);
 

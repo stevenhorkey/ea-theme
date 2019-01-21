@@ -3,6 +3,9 @@ var $ = jQuery;
 
 var id = post.ID;
 var title = post.post_title;
+var state = {
+  savedForms: null
+};
 
 function createPDF(){
   
@@ -158,6 +161,40 @@ function renderWorksheetForm(){
     });
 }
 
+function getMorePostFormInstances(){
+  $.get('/wp-json/wp/v2/getPostFormHTMLInstances', {
+    postId: id,
+    userId: userId
+  }, function(res){
+    // console.log(JSON.parse(res));
+
+  })
+    .done(function(res) {
+      // alert( "second success" );
+      state.savedForms = JSON.parse(res);
+      var data = JSON.parse(res);
+      for(i = 0; i < data.length; i++){
+        item = `<li class='savedForm' data-id='${data[i].id}'>${data[i].date_created}</li>`
+        $('#savedForms').append(item);
+      }
+      $("li.savedForm").click(function(){
+        var whichForm = $(this).attr('data-id')
+        var data = $.grep(state.savedForms, function(e){ return e.id == whichForm; });
+        var content = data[0].html_content.replace(/\\"/g, '"');
+        $(".written-copy").html(content);
+        // renderWorksheetForm();
+      })
+      
+      // $('#savedForms').
+    })
+    .fail(function(err) {
+      // alert( "error" );
+    })
+    .always(function() {
+      // alert( "finished" );
+    });
+}
+
 function postJSON() {
   // if logged in
   console.log('post json')
@@ -169,30 +206,14 @@ function postJSON() {
        $(this).attr("value", $(this).val()); 
     }
   });
-  let obj = {postId: id, title: title, date: new Date(), content: $('.written-copy').html()};
-  $.post('/wp-json/wp/v2/addPostFormHTMLInstance', JSON.stringify(obj), function(res){
-    console.log(JSON.parse(res));
+  var postData = {postId: id, userId: userId, content: ($('.written-copy').html()).trim()};
+  // console.log(thing,JSON.parse(thing))
+  $.post('/wp-json/wp/v2/addPostFormHTMLInstance', postData, function(res){
+    console.log(res);
   })
     .done(function() {
       alert( "second success" );
-    })
-    .fail(function() {
-      alert( "error" );
-    })
-    .always(function() {
-      // alert( "finished" );
-    });
-};
-
-function getMorePostFormInstances(){
-  $.get('/wp-json/wp/v2/getPostFormHTMLInstances', {
-    postId: null,
-    userId: null
-  }, function(res){
-    console.log(JSON.parse(res));
-  })
-    .done(function() {
-      alert( "second success" );
+      getMorePostFormInstances();
     })
     .fail(function(err) {
       alert( "error" );
@@ -200,7 +221,9 @@ function getMorePostFormInstances(){
     .always(function() {
       // alert( "finished" );
     });
-}
+};
+
+
 
 
 $( document ).ready(function() {
@@ -208,6 +231,7 @@ $( document ).ready(function() {
   // $.get('/wp-json/wp/v2/addPostFormHTMLInstance', function(res){
   //   console.log(res);
   // });
+    
 
     renderWorksheetForm();
 
@@ -237,10 +261,23 @@ $( document ).ready(function() {
     document.body.appendChild(icons);
 
     $("#create-pdf").click(function(){
-      // console.log(post);
       createPDF();
-      // postJSON();
     })
+    $("#saveNewForm").click(function(){
+      postJSON();
+    })
+    
+    $("#getSavedForms").toggle(function(){
+      if(state.savedForms === null) getMorePostFormInstances();
+      else $('#savedForms').fadeIn();
+    }, function(){
+      $('#savedForms').fadeOut();
+    });
+
+    
+
+    
+    
 
 
 

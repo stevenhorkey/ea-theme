@@ -18,6 +18,23 @@ blockquote:hover{
   transform: scale(1.02);
 }
 
+#savedForms{
+  width: 300px;
+  position: fixed;
+  top: 44px;
+  background: #eee;
+  padding: 1rem;
+  left: 0;
+  list-style: none;
+  display: none;
+  padding: 0;
+}
+#savedForms li {
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-top: 0;
+}
+
 #notes-div{
   position: fixed;
   min-height: 200px;
