@@ -19,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php the_content(); ?>
 
 		<?php
-		echo var_dump(the_post());
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
