@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $container = get_theme_mod( 'understrap_container_type' );
 // var_dump(wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false )[0]);
 $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false )[0];
-if(!$src) $src = "https://source.unsplash.com/collection/1242150/2000x1200";
+if(!$src) $src = "https://source.unsplash.com/collection/3853013/2000x1200";
 
 ?>
 

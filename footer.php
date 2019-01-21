@@ -28,7 +28,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 
-						<small class="text-muted py-5">Copyright &copy; Everything In All 2018</small>
+						<small class="text-muted py-5">Copyright &copy; Everything In All 2018 - <span id="copyright">
+        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    </span></small>
 
 					</div><!-- .site-info -->
 

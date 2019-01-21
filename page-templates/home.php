@@ -42,27 +42,25 @@ get_hero();
 			<h1 class="text-uppercase py-5 letter-space text-light">Newest Release</h1>
 			<?php echo do_shortcode('[sonaar_audioplayer albums="1251" show_playlist="true" show_track_market="true" show_album_market="true" remove_player="true"][/sonaar_audioplayer]'); ?>
 			<a href="/music" class="d-block mt-5">
-				<button class="btn btn-primary text-light text-uppercase">View all Music</button>
+				<button class="btn btn-primary text-uppercase">View all Music</button>
 			</a>
 		</div>
 	</div>
 </section>
 
 <section class="">
-	<div class="container">
-		<div class="row pt-5 d-flex align-items-center">
-			<div class="col-12">
-				<h3 class="float-left text-uppercase mt-3">Recent Courses</h3>
-				<a href="/courses">
-					<button class="btn btn-primary float-right text-light text-uppercase">View all Courses</button>
-				</a>
+	<div class="container py-5">
+		<div class="row d-flex align-items-center">
+			<div class="col-12 text-center">
+				<h1 class="text-uppercase letter-space">Recent Courses</h1>
+				
 			</div>
 		</div>
-		<div class="row row-eq-height pb-5">
+		<div class="row row-eq-height py-4">
 			<?php 
 			// the query
 			$the_query = new WP_Query( array(
-				'posts_per_page' => 8,
+				'posts_per_page' => 4,
 			)); 
 			$the_query->the_post(); 
 				$slug = basename( get_permalink() );
@@ -93,6 +91,14 @@ get_hero();
 
 			
 			<?php endif; ?>
+		</div>
+		<div class="row">
+			<div class="col-12 text-center">
+				<a href="/courses">
+					<button class="btn btn-primary text-uppercase">View all Courses</button>
+				</a>
+				
+			</div>
 		</div>
 	</div>
 </section>
