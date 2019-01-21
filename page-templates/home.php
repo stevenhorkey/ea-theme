@@ -52,7 +52,7 @@ get_hero();
 	<div class="container">
 		<div class="row py-4 d-flex align-items-center">
 			<div class="col-12">
-				<h3 class="float-left text-uppercase">Recent Courses</h3>
+				<h3 class="float-left text-uppercase mt-3">Recent Courses</h3>
 				<a href="/courses">
 					<button class="btn btn-primary float-right text-light text-uppercase">View all Courses</button>
 				</a>
