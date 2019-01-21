@@ -174,11 +174,11 @@ function getMorePostFormInstances(){
       state.savedForms = JSON.parse(res);
       var data = JSON.parse(res);
       for(i = 0; i < data.length; i++){
-        item = `<li class='savedForm' data-id='${data[i].id}'>${data[i].date_created}</li>`
+        item = `<li class='savedForm' data-id='${data[i].id}'>${data[i].date_created}</li>`;
         $('#savedForms').append(item);
       }
       $("li.savedForm").click(function(){
-        var whichForm = $(this).attr('data-id')
+        var whichForm = $(this).attr('data-id');
         var data = $.grep(state.savedForms, function(e){ return e.id == whichForm; });
         var content = data[0].html_content.replace(/\\"/g, '"');
         $(".written-copy").html(content);
