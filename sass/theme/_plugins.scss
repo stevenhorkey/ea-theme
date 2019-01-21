@@ -5,7 +5,7 @@
     align-items: stretch;
     flex-flow: row wrap;
     box-sizing: border-box;
-    background: #eee;
+    background: #eeeeeedb;
     padding: 3rem 0;
     box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 4px 7px rgba(0,0,0,.24);
     img{
@@ -22,6 +22,8 @@
         flex-direction: column;
         .sr_it-playlist-title{
             text-transform: uppercase;
+            background: unset !important;
+            -webkit-text-fill-color: unset !important;
         }
 
         li{
