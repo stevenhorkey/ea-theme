@@ -50,7 +50,7 @@ get_hero();
 
 <section class="">
 	<div class="container">
-		<div class="row py-4 d-flex align-items-center">
+		<div class="row pt-5 d-flex align-items-center">
 			<div class="col-12">
 				<h3 class="float-left text-uppercase mt-3">Recent Courses</h3>
 				<a href="/courses">
