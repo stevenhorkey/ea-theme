@@ -8,7 +8,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-echo the_post();
+echo var_dump(the_post());
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
