@@ -21,13 +21,12 @@ if(!$src) $src = "https://source.unsplash.com/collection/1242150/2000x1200";
 ?>
 
 <section class="site-hero" style="
-            background: linear-gradient(#00000080, #00000080), url('<?php echo $src ?>')
+            background: linear-gradient(#00000080, #00000080), url('<?php echo $src ?>');
+            min-height: 100vh;
+            height: fit-content;
+            padding: 5rem;
         ">
     <div class="container h-100">
-        <div class="row h-100 d-flex align-items-center justify-content-center flex-column text-uppercase" >
-            <h1 class="text-light"><?php the_title(); ?></h1>
-            <h3 class="text-light"><?php the_subtitle(); ?></h3>
-        </div>
         <div class="row" >
             <main class="site-main w-100 text-center" id="main">
 
