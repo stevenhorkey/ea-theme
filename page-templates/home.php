@@ -36,6 +36,14 @@ get_hero();
 	</div>
 </section>
 
+<section>
+	<div class="container">
+		<div class="w-100 text-center">
+			<?php get_post(1027) ?>
+		</div>
+	</div>
+</section>
+
 <section class="">
 	<div class="container">
 		<div class="row py-4 d-flex align-items-center">
