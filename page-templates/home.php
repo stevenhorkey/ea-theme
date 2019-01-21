@@ -36,10 +36,14 @@ get_hero();
 	</div>
 </section>
 
-<section>
+<section class="py-5 home-music">
 	<div class="container">
 		<div class="w-100 text-center">
+			<h1 class="text-uppercase py-5 letter-space text-light">Newest Release</h1>
 			<?php echo do_shortcode('[sonaar_audioplayer albums="1251" show_playlist="true" show_track_market="true" show_album_market="true" remove_player="true"][/sonaar_audioplayer]'); ?>
+			<a href="/music" class="d-block mt-5">
+				<button class="btn btn-primary text-light text-uppercase">View all Music</button>
+			</a>
 		</div>
 	</div>
 </section>
