@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Background Page Template
+ * Template Name: Music Page Template
  *
  * 
  *
@@ -27,12 +27,17 @@ if(!$src) $src = "https://source.unsplash.com/collection/1242150/2000x1200";
             padding: 5rem;
         ">
     <div class="container h-100">
+        <div class="row h-100 d-flex align-items-center justify-content-center flex-column text-uppercase">
+            <h1 class="text-light"><?php the_title(); ?></h1>
+            <h3 class="text-light"><?php the_subtitle(); ?></h3>
+        </div>
         <div class="row" >
             <main class="site-main w-100 text-center" id="main">
+                
 
                 <?php while ( have_posts() ) : the_post(); ?>
 
-                    <?php get_template_part( 'loop-templates/content', 'page' ); ?>
+                    <?php get_template_part( 'loop-templates/music', 'page' ); ?>
 
                 <?php endwhile; // end of the loop. ?>
 
