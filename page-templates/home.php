@@ -39,7 +39,7 @@ get_hero();
 <section>
 	<div class="container">
 		<div class="w-100 text-center">
-			<?php echo do_shortcode('[sonaar_audioplayer albums="1251" show_playlist="true" show_track_market="true" show_album_market="true"][/sonaar_audioplayer]'); ?>
+			<?php echo do_shortcode('[sonaar_audioplayer albums="1251" show_playlist="true" show_track_market="true" show_album_market="true" remove_player="true"][/sonaar_audioplayer]'); ?>
 		</div>
 	</div>
 </section>
