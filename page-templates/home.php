@@ -16,8 +16,10 @@ get_header();
 
 get_hero();
 
-?>
+if(current_user_can('edit_themes') && is_user_logged_in()):
 
+?>
+	
 <section class="bg-dark">
 	<div class="container">
 		<div class="row pb-5 d-flex align-items-center bg-black">
@@ -43,6 +45,10 @@ get_hero();
 	</div>
 </section>
 
+<?php
+endif;
+
+?>
 <section class="py-5 home-music">
 	<div class="container">
 		<div class="w-100 text-center">
@@ -55,6 +61,11 @@ get_hero();
 	</div>
 </section>
 
+<?php
+
+if(current_user_can('edit_themes') && is_user_logged_in()) :
+
+?>
 <section class="">
 	<div class="container py-5">
 		<div class="row d-flex align-items-center">
@@ -111,6 +122,7 @@ get_hero();
 </section>
 
 <?php
+endif;
 
 // while ( have_posts() ) :
 // 	the_post();
