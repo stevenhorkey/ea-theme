@@ -16,39 +16,29 @@ get_header();
 
 get_hero();
 
-if(current_user_can('edit_themes') && is_user_logged_in()):
 
 ?>
 	
-<section class="bg-dark">
+<section class="bg-dark" style="border-bottom:white solid 2px;border-top:white solid 2px;">
 	<div class="container">
 		<div class="row pb-5 d-flex align-items-center bg-black">
-			<div class="col-lg-6 pt-5 text-justify">
+			<div class="col-md-6 pt-5 text-justify">
 				<?php if( have_posts() ) {
 					while( have_posts() ) {
 					the_post();
 						the_content();
 					}
 				} ?>
-				<!-- <div class="col-12 d-flex align-items-center justify-content-center py-4">
-					<img id="steven-headshot" src="https://everythinginall.com/wp-content/uploads/2019/01/steven-headshot.jpg" />
-					<div class="flex-column d-flex align-items-center">
-						<img id="home-signiture" src={signiture}/>
-						<small class="text-muted">Steven Horkey</small>
-					</div>
-				</div> -->
+
 			</div>
-			<div class="col-lg-6 pt-5">
+			<div class="col-md-6 pt-5">
 				<?php get_subscribe() ?>
 			</div>
 		</div>
 	</div>
 </section>
 
-<?php
-endif;
 
-?>
 <section class="py-5 home-music">
 	<div class="container">
 		<div class="w-100 text-center">

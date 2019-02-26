@@ -167,11 +167,11 @@ function getMorePostFormInstances(){
     postId: id,
     userId: userId
   }, function(res){
-    // console.log(JSON.parse(res));
+    console.log('finished?')
 
   })
     .done(function(res) {
-      // alert( "second success" );
+      console.log('returned from db');
       state.savedForms = JSON.parse(res);
       var data = JSON.parse(res);
       for(i = 0; i < data.length; i++){
